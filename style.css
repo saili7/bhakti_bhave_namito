@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text&family=Gloock&display=swap');
+
+:root {
+  --color-border: #d4af37;
+  /* gold (for borders, accents) */
+  --color-accent: #e8cf89;
+  /* hover highlight */
+  --color-bg: #fff9f1;
+  /* background */
+  --color-text: #6e401d;
+  /* btn color */
+  --color-btn:#852121;
+  /* hover btn */
+  --color-hover-btn :#b28d28;
+  /* btn color */
+  --color-btn-color:#f5deb3;
+  /* book page bg */
+  --color-page-bg: #fffffff7;
+  /* about swami */
+  --color-about-bg:#fffaf0f2;
+}
+/* global properties */
+body {
+  margin: 0;
+  font-family: 'Gloock', serif;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2em;
+  padding: 30px 0px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 1em;
+}
+
+::selection {
+  background: var(--color-accent);
+}
+
+/* header */
+header {
+  padding: 30px 20px;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+/* logo */
+.logo {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo img {
+  height: 60px;
+  margin-right: 12px;
+  border-radius: 20%;
+  border: 2px solid var(--color-border);
+}
+
+/* download btn */
+.download-btn , .download-mob{
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: var(--color-btn);
+  color:var(--color-btn-color) ;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px #0000001a;
+}
+
+.download-mob{
+  display: none;
+}
+
+.download-btn:hover {
+  background-color: var(--color-hover-btn) ;
+}
+
+.book-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 15px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-gap: 30px;
+}
+
+.book-page {
+  background: var(--color-page-bg);
+  border-left: 5px solid var(--color-border);
+  max-height: 760px;
+  border-radius: 10px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.7s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+
+}
+
+.book-page.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.book-page img {
+  width: 100%;
+  height: 700px;
+  border-radius: 8px;
+}
+
+/* about */
+.about {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0px;
+  text-align: left;
+}
+
+.about-swami {
+  background:var(--color-about-bg) ;
+  padding: 30px;
+  width: 70%;
+  border-radius: 12px;
+  border-left: 5px solid var(--color-border);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.about-swami.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-swami h2 {
+  font-size: 2rem;
+  text-align: left;
+  padding-bottom: 20px;
+}
+
+.about-swami p,
+.about-swami li {
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.about-swami ul {
+  list-style-type: "✦ ";
+  padding-left: 20px;
+}
+
+.swami-photo {
+  width: 40%;
+  height: auto;
+  border-radius: 5%;
+  float: right;
+  margin-left: 20px;
+  border: 3px solid var(--color-border);
+}
+
+footer {
+  text-align: center;
+  padding: 40px 0px;
+  font-size: 1.2rem;
+}
+
+#scrollToTopBtn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 100;
+  font-size: 1.5rem;
+  background-color: #d4af3753;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: none;
+  transition: opacity 0.3s ease;
+}
+#scrollToTopBtn:hover {
+  background-color: var(--color-accent);
+}
+
+
+/* Responsive adjustments */
+/* ========== Medium screens (tablets) ========== */
+@media (max-width: 1024px) {
+  .about-swami {
+    width: 85%;
+    padding: 20px;
+  }
+
+  .book-container {
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  }
+
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  .download-btn {
+    padding: 10px 20px;
+  }
+}
+
+/* ========== Small screens (phones) ========== */
+@media (max-width: 768px) {
+  body {
+    padding: 0 20px;
+  }
+
+  header{
+    padding-bottom: 10px;
+  }
+
+  .header-top{
+    flex-direction: column;
+  }
+
+  .logo img {
+    margin-bottom: 10px;
+  }
+
+  .book-container {
+    grid-template-columns: 1fr;
+    padding: 10px 5px;
+  }
+
+  .book-page {
+    max-height: none;
+  }
+
+  .book-page img {
+    height: auto;
+  }
+
+  .about-swami {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+  }
+
+  .swami-photo {
+    width: 70%;
+    height: 60%;
+    float: none;
+    margin: 20px 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  .download-btn {
+    display: none;
+  }
+
+  .download-mob{
+  margin-top: 30px;
+  display: block;
+}
+
+#scrollToTopBtn{
+  bottom: 15px;
+  right: 15px;
+  width: 45px;
+  height: 45px;
+}
+
+  footer {
+    padding: 30px 10px;
+    font-size: 1rem;
+  }
+}
+
+/* ========== Very small devices ========== */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  .header-top .logo h3{
+    font-size: 1.1rem;
+  }
+
+  .header,.header-top{
+    padding: 0;
+  }
+  .about-swami p,
+  .about-swami li {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .download-btn , .download-mob{
+    font-size: 0.9rem;
+  }
+
+    
+}
