@@ -1,5 +1,8 @@
 🌐✨ Bhakti Bhave Namito ✨🌐
 
+<img width="400" height="500" alt="image" src="https://github.com/user-attachments/assets/02761f2d-5f71-4c13-8571-49397cabe98a" />
+
+
 I'm happy to share that I’ve created a website dedicated to the spiritual book "Bhakti Bhave Namito", written by my Guru, स्वामी गोकुलेन्द्र सरस्वती.
 
 🔗 https://bhakti-bhave-namito.netlify.app/
